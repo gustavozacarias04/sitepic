@@ -1,0 +1,131 @@
+/* Adiciona um efeito de rolagem suave para melhorar a experiência do usuário */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Estiliza a barra de rolagem para navegadores baseados no WebKit (Chrome, Safari) */
+::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+  /* Cor de fundo da trilha da scrollbar */
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  /* Define a largura da scrollbar */
+  background: #f4f4f4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dad7d7;
+  /* Cor do "polegar" da scrollbar */
+}
+
+/* Estilização global do body */
+body {
+  font-family: "Poppins", sans-serif;
+  /* Define a fonte principal */
+  margin: 0;
+  padding: 0;
+  transition: cursor 0.3s ease-in-out;
+  /* Adiciona uma transição suave para mudanças no cursor */
+}
+
+/* Estilização dos itens do menu */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* Espaço entre os elementos do menu */
+}
+
+/* Define o tamanho das imagens dentro dos itens do menu */
+.menu-item img {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  transition: filter 0.3s ease-in-out;
+  /* Suaviza a transição ao passar o mouse */
+}
+
+/* Efeito de hover para os ícones do menu */
+.menu-item:hover img {
+  filter: invert(68%) sepia(67%) saturate(247%) hue-rotate(75deg) brightness(102%) contrast(102%);
+}
+
+/* Estilização da seção Home */
+#home {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  /* Centraliza a seção na página */
+}
+
+/* Efeito de animação para a seção "Sobre" ao aparecer */
+.about-feature-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Classe para tornar a seção visível com animação */
+.about-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Classe para esconder a seção com um efeito de deslocamento */
+.about-hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Suaviza a transição dos slides do Swiper.js */
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+/* Centraliza os elementos dentro de cada slide do Swiper */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Efeitos de animação para os itens do FAQ */
+.faq-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--order) * 0.1s);
+}
+
+.faq-hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* Animações para o título da seção FAQ */
+.faq-title {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-title-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faq-title-hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+}
