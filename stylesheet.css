@@ -1,4 +1,4 @@
-/* Adiciona um efeito de rolagem suave para melhorar a experiência do usuário */
+/* Scroll Behavior */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -21,7 +21,7 @@ html {
   /* Cor do "polegar" da scrollbar */
 }
 
-/* Estilização global do body */
+/* Base Styles */
 body {
   font-family: "Poppins", sans-serif;
   /* Define a fonte principal */
@@ -31,12 +31,11 @@ body {
   /* Adiciona uma transição suave para mudanças no cursor */
 }
 
-/* Estilização dos itens do menu */
+/* Menu Styles */
 .menu-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  /* Espaço entre os elementos do menu */
 }
 
 /* Define o tamanho das imagens dentro dos itens do menu */
@@ -45,7 +44,6 @@ body {
   height: 24px;
   min-width: 24px;
   transition: filter 0.3s ease-in-out;
-  /* Suaviza a transição ao passar o mouse */
 }
 
 /* Efeito de hover para os ícones do menu */
@@ -53,7 +51,7 @@ body {
   filter: invert(68%) sepia(67%) saturate(247%) hue-rotate(75deg) brightness(102%) contrast(102%);
 }
 
-/* Estilização da seção Home */
+/* Layout */
 #home {
   max-width: 1400px;
   width: 100%;
@@ -61,7 +59,7 @@ body {
   /* Centraliza a seção na página */
 }
 
-/* Efeito de animação para a seção "Sobre" ao aparecer */
+/* About Section Animations */
 .about-feature-section {
   opacity: 0;
   transform: translateY(50px);
@@ -81,7 +79,7 @@ body {
   transform: translateY(-20px);
 }
 
-/* Suaviza a transição dos slides do Swiper.js */
+/* Swiper Styles */
 .swiper-wrapper {
   transition-timing-function: linear !important;
 }
@@ -93,7 +91,7 @@ body {
   align-items: center;
 }
 
-/* Efeitos de animação para os itens do FAQ */
+/* FAQ Animations */
 .faq-item {
   opacity: 0;
   transform: translateY(50px);

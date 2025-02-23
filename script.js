@@ -1,50 +1,31 @@
 // =======================
 // MENU TOGGLE FUNCTIONALITY
 // =======================
-const menuBtn = document.getElementById("menu-btn");
-const closeBtn = document.getElementById("close-btn");
-const menu = document.getElementById("menu");
-const overlay = document.getElementById("overlay");
+document.addEventListener("DOMContentLoaded", function() {
+    const menuBtn = document.getElementById("menu-btn");
+    const closeBtn = document.getElementById("close-btn");
+    const menu = document.getElementById("menu");
+    const overlay = document.getElementById("overlay");
 
-menuBtn.addEventListener("click", openMenu);
-closeBtn.addEventListener("click", closeMenu);
-overlay.addEventListener("click", closeMenu);
+    if (menuBtn && window.getComputedStyle(menuBtn).display !== 'none') {
+        menuBtn.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+        overlay.addEventListener("click", closeMenu);
+    }
 
-function openMenu() {
-  menu.classList.remove("translate-x-full");
-  menu.classList.add("translate-x-0");
-  overlay.classList.remove("hidden");
-  menuBtn.setAttribute("aria-expanded", "true");
-}
+    function openMenu() {
+        menu.classList.remove("translate-x-full");
+        menu.classList.add("translate-x-0");
+        overlay.classList.remove("hidden");
+        menuBtn.setAttribute("aria-expanded", "true");
+    }
 
-function closeMenu() {
-  menu.classList.remove("translate-x-0");
-  menu.classList.add("translate-x-full");
-  overlay.classList.add("hidden");
-  menuBtn.setAttribute("aria-expanded", "false");
-}
-
-// =======================
-// SWIPER CAROUSEL CONFIGURATION
-// =======================
-const swiper = new Swiper(".multiple-slide-carousel", {
-  loop: true,
-  slidesPerView: 2,
-  spaceBetween: 20,
-  centeredSlides: true,
-  speed: 10000,
-  autoplay: { delay: 0, disableOnInteraction: false },
-  freeMode: true,
-  preloadImages: true,
-  lazy: false,
-  loopAdditionalSlides: 2,
-  watchSlidesProgress: true,
-  watchSlidesVisibility: true,
-  breakpoints: {
-    1920: { slidesPerView: 2, spaceBetween: 10 },
-    1028: { slidesPerView: 2, spaceBetween: 10 },
-    990: { slidesPerView: 1, spaceBetween: 0 },
-  },
+    function closeMenu() {
+        menu.classList.remove("translate-x-0");
+        menu.classList.add("translate-x-full");
+        overlay.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+    }
 });
 
 // =======================
@@ -126,17 +107,14 @@ document.getElementById("scroll-btn").addEventListener("click", function () {
   const arrow = document.getElementById("arrow-icon");
 
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      // Se estiver no final da página, volta para o topo
       window.scrollTo({ top: 0, behavior: "smooth" });
-      arrow.classList.remove("rotate-180"); // Restaura a seta para cima
+      arrow.classList.remove("rotate-180");
   } else {
-      // Se não estiver no final, rola até o final da página
       window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-      arrow.classList.add("rotate-180"); // Gira a seta para baixo
+      arrow.classList.add("rotate-180");
   }
 });
 
-// Detecta rolagem para ajustar o ícone dinamicamente
 window.addEventListener("scroll", function () {
   const arrow = document.getElementById("arrow-icon");
   if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
