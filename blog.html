@@ -1,96 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="DEMS Blog - Latest updates and insights">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEMS Blog</title>
     <link rel="icon" type="image/svg+xml" href="assets/dems.svg" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link href="stylesheet.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-[#030F0F] text-white min-h-screen">
+    <nav class="w-full max-w-[2000px] mx-auto pt-5 sm:pt-6 lg:pt-8 px-4 sm:px-8 lg:px-16 flex justify-between items-center">
+        <a href="index.html" class="text-2xl cursor-pointer sm:text-3xl lg:text-4xl text-white font-bold">DEMS</a>
+        <a href="index.html" class="bg-[#00DF82] text-black px-5 sm:px-6 py-2 sm:py-3 rounded-full 
+            hover:bg-[#00bf6f] transition-all duration-300 flex items-center gap-2">
+            <span>Back to Home</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12h18M3 12l6-6m-6 6l6 6"/>
+            </svg>
+        </a>
+    </nav>
 
-<body class="mt-2 min-h-screen flex justify-center bg-[#03624C]">
-    <main class="bg-[#03624C] text-black w-full flex flex-col items-center max-w-[1400px] px-4 sm:px-8 lg:px-16">
-        <!-- Navigation Bar -->
-        <nav class="py-5 sm:py-6 lg:py-8 flex justify-between items-center w-full flex-wrap">
-            <a href="index.html" class="text-2xl cursor-pointer sm:text-3xl lg:text-4xl text-white font-bold">DEMS</a>
-            <div class="space-x-4 sm:space-x-8 flex items-center">
-                <a href="index.html" class="text-white hover:text-[#00DF82] duration-300 ease-in-out">Home</a>
-                <button
-                    class="bg-white text-black px-5 text-base sm:px-6 py-2 sm:py-3 rounded-full hover:bg-[#00DF82] duration-300 ease-in-out text-sm sm:text-base">Contact</button>
-            </div>
-        </nav>
+    <header class="max-w-[2000px] mx-auto px-4 sm:px-8 lg:px-16 mt-16">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold">
+            Our <span class="text-[#00DF82]">Blog</span>
+        </h1>
+        <p class="text-gray-400 mt-4 text-lg">Latest updates, news and insights about our project</p>
+    </header>
 
-        <!-- Blog Header -->
-        <div class="w-full bg-[#030F0F] rounded-3xl px-6 md:px-12 py-12 mt-8">
-            <h1 class="text-4xl md:text-5xl text-white font-bold mb-4">DEMS Blog</h1>
-            <p class="text-[#00DF82] text-xl">Latest updates and insights about our technology</p>
+    <div class="max-w-[2000px] mx-auto px-4 sm:px-8 lg:px-16 mt-12">
+        <div class="flex flex-wrap gap-3">
+            <button class="tag-btn active" data-tag="all">All Posts</button>
+            <button class="tag-btn" data-tag="Technology">Technology</button>
+            <button class="tag-btn" data-tag="Research">Research</button>
+            <button class="tag-btn" data-tag="Development">Development</button>
+            <button class="tag-btn" data-tag="Healthcare">Healthcare</button>
         </div>
+    </div>
 
-        <!-- Blog Posts -->
-        <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            <!-- Featured Post -->
-            <div class="bg-[#030F0F] rounded-3xl p-8 col-span-1 md:col-span-2">
-                <span class="text-[#00DF82] text-sm">Featured Post • 20 Feb 2025</span>
-                <h2 class="text-white text-3xl font-bold mt-2">Our First Milestone: Completing the Initial Prototype
-                </h2>
-                <p class="text-gray-300 mt-4">We're excited to announce the completion of our first DEMS prototype. This
-                    breakthrough represents months of dedicated research, development, and testing...</p>
-                <a href="#"
-                    class="inline-block mt-6 text-[#00DF82] hover:text-white transition-colors duration-300">Read More
-                    →</a>
-            </div>
+    <main class="max-w-[2000px] mx-auto px-4 sm:px-8 lg:px-16 mt-12 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="bg-[#151515] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d" 
+                         alt="Blog post image" 
+                         class="w-full h-48 object-cover">
+                    <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Technology
+                        </div>
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Research
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Feb 1, 2024
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            Filipe Esteves
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-3 group-hover:text-[#00DF82] transition-colors">
+                        Completing the Initial Prototype
+                    </h2>
+                    <p class="text-gray-400 mb-4 line-clamp-3">
+                        An in-depth look at our journey developing the first DEMS prototype, including the challenges we faced and the solutions we implemented.
+                    </p>
+                    <a href="posts/post-template.html" class="inline-flex items-center gap-2 text-[#00DF82] hover:text-[#00bf6f] transition-colors">
+                        Read More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
 
-            <!-- Regular Posts -->
-            <div class="bg-[#030F0F] rounded-3xl p-8">
-                <span class="text-[#00DF82] text-sm">15 Feb 2025</span>
-                <h2 class="text-white text-2xl font-bold mt-2">Design Challenges: How We Overcame Them</h2>
-                <p class="text-gray-300 mt-4">Exploring the various design challenges we faced during development and
-                    the innovative solutions we implemented...</p>
-                <a href="#"
-                    class="inline-block mt-6 text-[#00DF82] hover:text-white transition-colors duration-300">Read More
-                    →</a>
-            </div>
-
-            <div class="bg-[#030F0F] rounded-3xl p-8">
-                <span class="text-[#00DF82] text-sm">10 Feb 2025</span>
-                <h2 class="text-white text-2xl font-bold mt-2">Tech Stack Decisions: Why We Chose [Technology X]</h2>
-                <p class="text-gray-300 mt-4">An in-depth look at our technology choices and how they contribute to
-                    DEMS' performance and reliability...</p>
-                <a href="#"
-                    class="inline-block mt-6 text-[#00DF82] hover:text-white transition-colors duration-300">Read More
-                    →</a>
-            </div>
-
-            <div class="bg-[#030F0F] rounded-3xl p-8">
-                <span class="text-[#00DF82] text-sm">5 Feb 2025</span>
-                <h2 class="text-white text-2xl font-bold mt-2">The Future of Emergency Response Systems</h2>
-                <p class="text-gray-300 mt-4">Examining how DEMS is revolutionizing emergency response and what the
-                    future holds for medical monitoring...</p>
-                <a href="#"
-                    class="inline-block mt-6 text-[#00DF82] hover:text-white transition-colors duration-300">Read More
-                    →</a>
-            </div>
-
-            <div class="bg-[#030F0F] rounded-3xl p-8">
-                <span class="text-[#00DF82] text-sm">1 Feb 2025</span>
-                <h2 class="text-white text-2xl font-bold mt-2">User Experience in Medical Technology</h2>
-                <p class="text-gray-300 mt-4">How we're making complex medical monitoring technology accessible and
-                    user-friendly...</p>
-                <a href="#"
-                    class="inline-block mt-6 text-[#00DF82] hover:text-white transition-colors duration-300">Read More
-                    →</a>
-            </div>
+            <!-- Post 2 -->
+            <article class="bg-[#151515] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                         alt="Design process visualization" 
+                         class="w-full h-48 object-cover">
+                    <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Development
+                        </div>
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Healthcare
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Jan 15, 2024
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            João Veríssimo
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-3 group-hover:text-[#00DF82] transition-colors">
+                        UI/UX Improvements in DEMS 2.0
+                    </h2>
+                    <p class="text-gray-400 mb-4 line-clamp-3">
+                        Exploring the latest user interface improvements and how they enhance the overall user experience in our emergency monitoring system.
+                    </p>
+                    <a href="posts/post-template.html" class="inline-flex items-center gap-2 text-[#00DF82] hover:text-[#00bf6f] transition-colors">
+                        Read More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="bg-[#151515] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d" 
+                         alt="Blog post image" 
+                         class="w-full h-48 object-cover">
+                    <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Technology
+                        </div>
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Research
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Feb 1, 2024
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            Filipe Esteves
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-3 group-hover:text-[#00DF82] transition-colors">
+                        Completing the Initial Prototype
+                    </h2>
+                    <p class="text-gray-400 mb-4 line-clamp-3">
+                        An in-depth look at our journey developing the first DEMS prototype, including the challenges we faced and the solutions we implemented.
+                    </p>
+                    <a href="posts/post-template.html" class="inline-flex items-center gap-2 text-[#00DF82] hover:text-[#00bf6f] transition-colors">
+                        Read More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="bg-[#151515] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d" 
+                         alt="Blog post image" 
+                         class="w-full h-48 object-cover">
+                    <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Technology
+                        </div>
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Research
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Feb 1, 2024
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            Filipe Esteves
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-3 group-hover:text-[#00DF82] transition-colors">
+                        Completing the Initial Prototype
+                    </h2>
+                    <p class="text-gray-400 mb-4 line-clamp-3">
+                        An in-depth look at our journey developing the first DEMS prototype, including the challenges we faced and the solutions we implemented.
+                    </p>
+                    <a href="posts/post-template.html" class="inline-flex items-center gap-2 text-[#00DF82] hover:text-[#00bf6f] transition-colors">
+                        Read More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="bg-[#151515] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d" 
+                         alt="Blog post image" 
+                         class="w-full h-48 object-cover">
+                    <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Technology
+                        </div>
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Research
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Feb 1, 2024
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            Filipe Esteves
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-3 group-hover:text-[#00DF82] transition-colors">
+                        Completing the Initial Prototype
+                    </h2>
+                    <p class="text-gray-400 mb-4 line-clamp-3">
+                        An in-depth look at our journey developing the first DEMS prototype, including the challenges we faced and the solutions we implemented.
+                    </p>
+                    <a href="posts/post-template.html" class="inline-flex items-center gap-2 text-[#00DF82] hover:text-[#00bf6f] transition-colors">
+                        Read More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="bg-[#151515] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d" 
+                         alt="Blog post image" 
+                         class="w-full h-48 object-cover">
+                    <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Technology
+                        </div>
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Research
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Feb 1, 2024
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            Filipe Esteves
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-3 group-hover:text-[#00DF82] transition-colors">
+                        Completing the Initial Prototype
+                    </h2>
+                    <p class="text-gray-400 mb-4 line-clamp-3">
+                        An in-depth look at our journey developing the first DEMS prototype, including the challenges we faced and the solutions we implemented.
+                    </p>
+                    <a href="posts/post-template.html" class="inline-flex items-center gap-2 text-[#00DF82] hover:text-[#00bf6f] transition-colors">
+                        Read More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="bg-[#151515] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d" 
+                         alt="Blog post image" 
+                         class="w-full h-48 object-cover">
+                    <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Technology
+                        </div>
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Research
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Feb 1, 2024
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            Filipe Esteves
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-3 group-hover:text-[#00DF82] transition-colors">
+                        Completing the Initial Prototype
+                    </h2>
+                    <p class="text-gray-400 mb-4 line-clamp-3">
+                        An in-depth look at our journey developing the first DEMS prototype, including the challenges we faced and the solutions we implemented.
+                    </p>
+                    <a href="posts/post-template.html" class="inline-flex items-center gap-2 text-[#00DF82] hover:text-[#00bf6f] transition-colors">
+                        Read More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="bg-[#151515] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d" 
+                         alt="Blog post image" 
+                         class="w-full h-48 object-cover">
+                    <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Technology
+                        </div>
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Research
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Feb 1, 2024
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            Filipe Esteves
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-3 group-hover:text-[#00DF82] transition-colors">
+                        Completing the Initial Prototype
+                    </h2>
+                    <p class="text-gray-400 mb-4 line-clamp-3">
+                        An in-depth look at our journey developing the first DEMS prototype, including the challenges we faced and the solutions we implemented.
+                    </p>
+                    <a href="posts/post-template.html" class="inline-flex items-center gap-2 text-[#00DF82] hover:text-[#00bf6f] transition-colors">
+                        Read More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="bg-[#151515] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d" 
+                         alt="Blog post image" 
+                         class="w-full h-48 object-cover">
+                    <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Technology
+                        </div>
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Research
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Feb 1, 2024
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            Filipe Esteves
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-3 group-hover:text-[#00DF82] transition-colors">
+                        Completing the Initial Prototype
+                    </h2>
+                    <p class="text-gray-400 mb-4 line-clamp-3">
+                        An in-depth look at our journey developing the first DEMS prototype, including the challenges we faced and the solutions we implemented.
+                    </p>
+                    <a href="posts/post-template.html" class="inline-flex items-center gap-2 text-[#00DF82] hover:text-[#00bf6f] transition-colors">
+                        Read More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            <article class="bg-[#151515] rounded-xl overflow-hidden group hover:transform hover:scale-[1.02] transition-all duration-300">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d" 
+                         alt="Blog post image" 
+                         class="w-full h-48 object-cover">
+                    <div class="absolute top-4 right-4 flex flex-wrap gap-2 justify-end">
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Technology
+                        </div>
+                        <div class="post-tag bg-[#00DF82] text-black px-3 py-1 rounded-full text-sm">
+                            Research
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-sm text-gray-400 mb-4">
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            Feb 1, 2024
+                        </span>
+                        <span class="flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            Filipe Esteves
+                        </span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-3 group-hover:text-[#00DF82] transition-colors">
+                        Completing the Initial Prototype
+                    </h2>
+                    <p class="text-gray-400 mb-4 line-clamp-3">
+                        An in-depth look at our journey developing the first DEMS prototype, including the challenges we faced and the solutions we implemented.
+                    </p>
+                    <a href="posts/post-template.html" class="inline-flex items-center gap-2 text-[#00DF82] hover:text-[#00bf6f] transition-colors">
+                        Read More
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </article>
+            
         </div>
-
-        <footer class="w-full text-center text-white mt-12 mb-8">
-            <p>© 2025 DEMS. All rights reserved.</p>
-        </footer>
     </main>
+
+    <style>
+        .tag-btn {
+            @apply px-4 py-2 rounded-full border border-[#00DF82] text-[#00DF82] 
+                   hover:bg-[#00DF82] hover:text-black transition-all duration-300;
+        }
+        .tag-btn.active {
+            @apply bg-[#00DF82] text-black;
+        }
+        :root {
+            --primary: #00DF82;
+            --primary-dark: #00bf6f;
+            --background: #030F0F;
+            --background-light: #151515;
+        }
+    </style>
+
+    <script>
+        const tagButtons = document.querySelectorAll('.tag-btn');
+        const blogPosts = document.querySelectorAll('article');
+
+        function filterPosts(selectedTag) {
+            blogPosts.forEach(post => {
+                // Pega todas as tags do post
+                const postTags = Array.from(post.querySelectorAll('.post-tag'))
+                    .map(tag => tag.textContent.trim());
+                
+                if (selectedTag === 'all' || postTags.includes(selectedTag)) {
+                    post.style.display = '';
+                    setTimeout(() => {
+                        post.style.opacity = '1';
+                        post.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    post.style.opacity = '0';
+                    post.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        post.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        tagButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tagButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                filterPosts(button.dataset.tag);
+            });
+        });
+
+        // Estilos para as tags e animações
+        const style = document.createElement('style');
+        style.textContent = `
+            article {
+                transition: all 0.3s ease-in-out;
+            }
+            .post-tag {
+                transition: all 0.3s ease;
+            }
+            .post-tag:hover {
+                transform: scale(1.05);
+            }
+            .tags-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: flex-end;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
-</html>
+</html> 
