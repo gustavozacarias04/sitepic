@@ -39,110 +39,45 @@
                             <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap=round
                                 stroke-linejoin=round stroke-width=2 />
                         </svg> <span id=reading-time>Loading...</span></span></div>
-                <h1 class="mb-8 font-bold md:text-5xl text-4xl">Emergency Acuity and Triage Systems Explained</h1>
+                <h1 class="mb-8 font-bold md:text-5xl text-4xl">Sensor Selection: Why We Chose the MAX30102 for
+                    Real-Time Vital Sign Monitoring</h1>
                 <div class="w-full h-[400px] mb-8 overflow-hidden relative rounded-2xl"><img alt="capa post 3"
                         class="w-full h-full object-cover" src=assets/post4capa.jpg>
                 </div>
             </header>
             <article class="max-w-none prose prose-invert prose-lg">
-                <p class="text-gray-100 mb-8 text-xl leading-relaxed font-light">As students working on a healthcare
-                    technology project, we recognize the importance of understanding the medical frameworks that guide
-                    emergency care. While our focus is on developing a technological solution, it is essential that we
-                    align our system with real-world clinical practices. Recently, the doctors advising us recommended a
-                    key NHS document on emergency department triage and acuity measurement. This document serves as a
-                    foundation for our learning, offering insights into how patients are assessed and prioritized in
-                    emergency settings.</p>
-                <p class="text-gray-100 mb-8 text-xl leading-relaxed font-light">
-                    Given the complexity of emergency medicine, our goal is to ensure that our system integrates
-                    seamlessly with existing triage protocols. To achieve this, we have been studying the methodologies
-                    used in different healthcare systems, particularly the <a
-                        href="https://codimg.com/healthcare/blog/en/manchester-triage-system"
-                        class="text-[#00DF82] hover:underline" target="_blank">Manchester Triage System (MTS)</a> - the
-                    standard
-                    applied in Portugal. By analyzing MTS and comparing it with other triage models, such as the
-                    <a href="https://en.wikipedia.org/wiki/Emergency_Severity_Index"
-                        class="text-[#00DF82] hover:underline" target="_blank">Emergency Severity Index (ESI)</a> and
-                    the <a href="https://caep.ca/wp-content/uploads/2017/06/module_1_slides_v2.5_2012.pdf"
-                        class="text-[#00DF82] hover:underline" target="_blank">Canadian Triage and Acuity Scale
-                        (CTAS)</a>, we can design a
-                    system that not only supports current practices but also introduces enhancements where possible.
-                </p>
-
-                <section class="mb-12 space-y-6">
-                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">The Role of
-                        Triage in Emergency Departments</h2>
-
-                    <blockquote class="border-l-4 border-[#00DF82] pl-4 italic my-8">
-                        <p class="text-gray-100 leading-relaxed text-lg">“Triage is a vital component in the process of
-                            assessing and prioritizing patients and defined as “the process of sorting people in need of
-                            medical attention in order to determine priority.”(Peta et al., 2023)
-                        </p>
-                    </blockquote>
-
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        An effective triage system must balance speed, accuracy, and resource allocation. It must enable
-                        healthcare providers to quickly assess a patient's condition, determine the urgency of care
-                        required, and assign an appropriate level of priority. To achieve this, triage systems rely on
-                        standardized criteria that guide decision-making and ensure consistency across different
-                        hospitals and regions.
-                    </p>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        The acuity measurement component of triage refers to how severe a patient's condition is, based
-                        on observable symptoms and clinical risk factors. Different triage scales classify patients into
-                        priority levels, ensuring that resources such as medical staff, equipment, and hospital beds are
-                        allocated effectively.
-                    </p>
-
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        In the NHS, triage is structured and follows specific guidelines. The system aims to minimize
-                        wait times, optimize patient flow, and ensure that emergency care is delivered efficiently. Some
-                        hospitals also use digital triage tools, which help assess patients before they even arrive at
-                        the hospital, reducing congestion and allowing staff to prepare for incoming cases.
-                    </p>
-                </section>
-
-                <section class="mb-12 space-y-6">
-                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">The Manchester
-                        Triage System (MTS) in Portugal</h2>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        One of the most widely adopted triage models worldwide is the Manchester Triage System (MTS).
-                        Originally developed in the UK in 1996, MTS is used in Portugal and many other countries to
-                        standardize the triage process. Its structured approach ensures that patients are categorized
-                        based on the urgency of their medical needs.
-                    </p>
-                </section>
+                <p class="text-gray-100 mb-8 text-xl leading-relaxed font-light">In the development of our Dynamic
+                    Emergency Monitoring System (DEMS), selecting the right sensor for real-time heart rate and oxygen
+                    saturation (SpO₂) monitoring is a critical decision. After evaluating multiple options, we chose the
+                    MAX30102, a highly efficient optical sensor designed for non-invasive measurement of vital signs.
+                    Its compact design, low power consumption, and high accuracy make it an ideal choice for wearable
+                    medical applications, particularly in emergency settings where continuous monitoring and immediate
+                    alerts are essential.</p>
 
                 <section class="mb-12 space-y-6">
                     <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">
-                        How the Manchester Triage System (MTS) Works
+                        Why the MAX30102?
                     </h2>
                     <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        The Manchester Triage System (MTS) categorizes patients into five color-coded groups, each
-                        indicating a different level of urgency for medical attention:
+                        The MAX30102 is a pulse oximeter and heart rate sensor that uses photoplethysmography (PPG)
+                        technology to measure blood oxygen levels and heart rate. It works by emitting red and infrared
+                        light through the skin and measuring the light absorption caused by blood flow variations.
+                        Several factors made this sensor the perfect fit for our system:
                     </p>
 
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        In emergency scenarios, precise and reliable measurements of vital signs are crucial for the early detection of critical patient conditions. The MAX30102 offers:
+                    </p>
+                    
                     <ul class="list-disc pl-6 space-y-2">
                         <li class="text-gray-100">
-                            <span class="font-bold">Red - Immediate:</span> Patients in life-threatening conditions
-                            require immediate intervention.
+                            <span class="font-bold">High signal sensitivity:</span> allows accurate readings even with minimal contact pressure.
                         </li>
                         <li class="text-gray-100">
-                            <span class="font-bold">Orange - Very Urgent:</span> Patients must be assessed within 10
-                            minutes due to severe but non-life-threatening conditions.
+                            <span class="font-bold">Advanced filtering techniques:</span> help reduce motion artifacts, improving data quality in dynamic environments.
                         </li>
-                        <li class="text-gray-100">
-                            <span class="font-bold">Yellow - Urgent:</span> Patients require medical attention within 60
-                            minutes to prevent potential deterioration.
-                        </li>
-                        <li class="text-gray-100">
-                            <span class="font-bold">Green - Standard:</span> Patients should receive care within 120
-                            minutes, as their condition is stable but requires attention.
-                        </li>
-                        <li class="text-gray-100">
-                            <span class="font-bold">Blue - Non-Urgent:</span> Patients can safely wait up to 240
-                            minutes, as they have minor ailments that may not require emergency treatment.
-                        </li>
-                    </ul>
+                        <li class="text-gray-100
+                    
                     <div class="w-full h-[450px] mb-2 overflow-hidden relative rounded-2xl">
                         <img alt="mockup" class="w-full h-full object-cover" src="assets/post4MTS.jpg">
                     </div>
