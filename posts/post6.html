@@ -1,0 +1,424 @@
+<!doctypehtml>
+    <html lang=en>
+    <meta charset=UTF-8>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <title>Emergency Acuity and Triage Systems Explained</title>
+    <link href=../assets/dems.svg rel=icon type=image/svg+xml>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel=stylesheet>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel=stylesheet>
+    <script src=https://cdn.tailwindcss.com></script>
+
+    <body class="bg-[#030F0F] min-h-screen text-white">
+        <nav
+            class="flex items-center justify-between lg:pt-8 lg:px-16 max-w-[2000px] mx-auto pt-5 px-4 sm:pt-6 sm:px-8 w-full">
+            <a class="text-2xl cursor-pointer font-bold lg:text-4xl sm:text-3xl text-white" href=../index.html>DEMS</a>
+            <div class="flex gap-4"><a
+                    class="flex items-center gap-2 bg-[#151515] duration-300 hover:bg-[#252525] rounded-full text-white transition-all px-5 py-2 sm:px-6 sm:py-3"
+                    href=../blog.html><svg class="h-4 w-4" fill=none viewBox="0 0 24 24" stroke=currentColor>
+                        <path d="M15 19l-7-7 7-7" stroke-linecap=round stroke-linejoin=round stroke-width=2 />
+                    </svg> Back to Blog</a></div>
+        </nav>
+        <main class="max-w-[800px] mx-auto px-4 py-16 sm:px-8">
+            <header class=mb-12>
+                <div class="flex gap-2 flex-wrap mb-6"><span
+                        class="rounded-full bg-[#00DF82] px-3 py-1 text-black text-sm">Research</span>
+                    <span class="rounded-full bg-[#00DF82] px-3 py-1 text-black text-sm">Healthcare</span>
+                </div>
+                <div class="flex items-center gap-4 mb-6 text-gray-400 text-sm"><span
+                        class="flex items-center gap-2"><svg class="h-4 w-4" fill=none viewBox="0 0 24 24"
+                            stroke=currentColor>
+                            <path
+                                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                stroke-linecap=round stroke-linejoin=round stroke-width=2 />
+                        </svg> March 28, 2025 </span><span class="flex items-center gap-2"><svg class="h-4 w-4"
+                            fill=none viewBox="0 0 24 24" stroke=currentColor>
+                            <path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                                stroke-linecap=round stroke-linejoin=round stroke-width=2 />
+                        </svg> Marco Matos </span><span class="flex items-center gap-2 read-time"><svg class="h-4 w-4"
+                            fill=none viewBox="0 0 24 24" stroke=currentColor>
+                            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap=round
+                                stroke-linejoin=round stroke-width=2 />
+                        </svg> <span id=reading-time>Loading...</span></span></div>
+                <h1 class="mb-8 font-bold md:text-5xl text-4xl">Emergency Acuity and Triage Systems Explained</h1>
+                <div class="w-full h-[400px] mb-8 overflow-hidden relative rounded-2xl"><img alt="capa post 3"
+                        class="w-full h-full object-cover" src=assets/post4capa.jpg>
+                </div>
+            </header>
+            <article class="max-w-none prose prose-invert prose-lg">
+                <p class="text-gray-100 mb-8 text-xl leading-relaxed font-light">As students working on a healthcare
+                    technology project, we recognize the importance of understanding the medical frameworks that guide
+                    emergency care. While our focus is on developing a technological solution, it is essential that we
+                    align our system with real-world clinical practices. Recently, the doctors advising us recommended a
+                    key NHS document on emergency department triage and acuity measurement. This document serves as a
+                    foundation for our learning, offering insights into how patients are assessed and prioritized in
+                    emergency settings.</p>
+                <p class="text-gray-100 mb-8 text-xl leading-relaxed font-light">
+                    Given the complexity of emergency medicine, our goal is to ensure that our system integrates
+                    seamlessly with existing triage protocols. To achieve this, we have been studying the methodologies
+                    used in different healthcare systems, particularly the <a
+                        href="https://codimg.com/healthcare/blog/en/manchester-triage-system"
+                        class="text-[#00DF82] hover:underline" target="_blank">Manchester Triage System (MTS)</a> - the
+                    standard
+                    applied in Portugal. By analyzing MTS and comparing it with other triage models, such as the
+                    <a href="https://en.wikipedia.org/wiki/Emergency_Severity_Index"
+                        class="text-[#00DF82] hover:underline" target="_blank">Emergency Severity Index (ESI)</a> and
+                    the <a href="https://caep.ca/wp-content/uploads/2017/06/module_1_slides_v2.5_2012.pdf"
+                        class="text-[#00DF82] hover:underline" target="_blank">Canadian Triage and Acuity Scale
+                        (CTAS)</a>, we can design a
+                    system that not only supports current practices but also introduces enhancements where possible.
+                </p>
+
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">The Role of
+                        Triage in Emergency Departments</h2>
+
+                    <blockquote class="border-l-4 border-[#00DF82] pl-4 italic my-8">
+                        <p class="text-gray-100 leading-relaxed text-lg">“Triage is a vital component in the process of
+                            assessing and prioritizing patients and defined as “the process of sorting people in need of
+                            medical attention in order to determine priority.”(Peta et al., 2023)
+                        </p>
+                    </blockquote>
+
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        An effective triage system must balance speed, accuracy, and resource allocation. It must enable
+                        healthcare providers to quickly assess a patient's condition, determine the urgency of care
+                        required, and assign an appropriate level of priority. To achieve this, triage systems rely on
+                        standardized criteria that guide decision-making and ensure consistency across different
+                        hospitals and regions.
+                    </p>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        The acuity measurement component of triage refers to how severe a patient's condition is, based
+                        on observable symptoms and clinical risk factors. Different triage scales classify patients into
+                        priority levels, ensuring that resources such as medical staff, equipment, and hospital beds are
+                        allocated effectively.
+                    </p>
+
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        In the NHS, triage is structured and follows specific guidelines. The system aims to minimize
+                        wait times, optimize patient flow, and ensure that emergency care is delivered efficiently. Some
+                        hospitals also use digital triage tools, which help assess patients before they even arrive at
+                        the hospital, reducing congestion and allowing staff to prepare for incoming cases.
+                    </p>
+                </section>
+
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">The Manchester
+                        Triage System (MTS) in Portugal</h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        One of the most widely adopted triage models worldwide is the Manchester Triage System (MTS).
+                        Originally developed in the UK in 1996, MTS is used in Portugal and many other countries to
+                        standardize the triage process. Its structured approach ensures that patients are categorized
+                        based on the urgency of their medical needs.
+                    </p>
+                </section>
+
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">
+                        How the Manchester Triage System (MTS) Works
+                    </h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        The Manchester Triage System (MTS) categorizes patients into five color-coded groups, each
+                        indicating a different level of urgency for medical attention:
+                    </p>
+
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li class="text-gray-100">
+                            <span class="font-bold">Red - Immediate:</span> Patients in life-threatening conditions
+                            require immediate intervention.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">Orange - Very Urgent:</span> Patients must be assessed within 10
+                            minutes due to severe but non-life-threatening conditions.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">Yellow - Urgent:</span> Patients require medical attention within 60
+                            minutes to prevent potential deterioration.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">Green - Standard:</span> Patients should receive care within 120
+                            minutes, as their condition is stable but requires attention.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">Blue - Non-Urgent:</span> Patients can safely wait up to 240
+                            minutes, as they have minor ailments that may not require emergency treatment.
+                        </li>
+                    </ul>
+                    <div class="w-full h-[450px] mb-2 overflow-hidden relative rounded-2xl">
+                        <img alt="mockup" class="w-full h-full object-cover" src="assets/post4MTS.jpg">
+                    </div>
+                    <div class="text-sm text-white text-center">
+                        Figure 1: Color-coded wristbands used in hospital triage.
+                    </div>
+
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        Each classification is determined through a structured process involving clinical decision
+                        flowcharts and symptom-based evaluation. These standardized decision trees help healthcare
+                        professionals assess patient symptoms and assign the appropriate priority level, ensuring an
+                        effective and organized triage process.
+                    </p>
+                </section>
+
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">
+                        Why We Prioritize Yellow Patients
+                    </h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        As previously mentioned in our blog (<a href="post2.html" class="text-[#00DF82] hover:underline"
+                            target="_blank">Stakeholder Meeting</a>), our primary focus is on
+                        yellow-category patients. These individuals represent a critical
+                        but often overlooked group - they require urgent medical attention, yet their conditions are not
+                        immediately life-threatening. The challenge lies in balancing timely care with resource
+                        allocation.
+                    </p>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        Yellow patients constitute a significant proportion of emergency department cases - in some
+                        instances, up to 42% of all admissions. Despite not being in immediate danger, delays in their
+                        treatment can lead to severe complications, including condition deterioration, prolonged
+                        hospital stays, or even escalation to a more critical state.
+                    </p>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        Addressing this issue is crucial to improving patient outcomes and optimizing emergency
+                        department efficiency.
+                    </p>
+                </section>
+
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">Enhancing
+                        Triage Efficiency with Continuous Monitoring</h2>
+                    <div class="bg-[#051515] p-6 rounded-lg border-l-4 border-[#00DF82] my-8">
+                        <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                            By integrating real-time patient monitoring into the triage process, we aim to ensure that
+                            yellow-category patients receive timely and appropriate care. Our system utilizes wearable
+                            sensors, data processing algorithms, and real-time alerts to:
+                        </p>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li class="text-gray-100">
+                                Continuously track vital signs such as heart rate, oxygen levels, and movement patterns.
+                            </li>
+                            <li class="text-gray-100">
+                                Detect early signs of deterioration, preventing escalation to more critical conditions.
+                            </li>
+                            <li class="text-gray-100">
+                                Alert medical staff when intervention is needed, reducing unnecessary delays.
+                            </li>
+                            <li class="text-gray-100">
+                                Optimize triage decisions, ensuring high-priority cases are addressed efficiently.
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-100 text-lg leading-relaxed">
+                        Through this approach, we aim to bridge the gap between technology and emergency care, enhancing
+                        the Manchester Triage System with data-driven insights and improved patient monitoring. By
+                        prioritizing yellow-category patients, we can significantly improve response times, resource
+                        allocation, and overall patient outcomes in emergency settings.
+                    </p>
+                </section>
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">Benefit of MTS
+                    </h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        MTS has several advantages that make it effective in emergency departments:
+                    </p>
+
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li class="text-gray-100">
+                            <span class="font-bold">Standardization:</span> Ensures that all patients are assessed using
+                            the same clinical criteria, reducing variability between different hospitals.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">Efficiency:</span> Allows rapid decision-making, helping hospitals
+                            manage large numbers of patients effectively.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">Resource Optimization :</span> Helps prioritize patients based on
+                            urgency, ensuring that critical cases receive immediate attention.
+                        </li>
+                    </ul>
+
+                </section>
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">Limitations and
+                        Challenges of MTS
+                    </h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        Despite its advantages, MTS is not perfect. Some of its challenges include:
+                    </p>
+
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li class="text-gray-100">
+                            <span class="font-bold">Subjectivity:</span> Ensures that all patients are assessed using
+                            the same clinical criteria, reducing variability between different hospitals.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">Overcrowding in Emergency Departments:</span> MTS does not directly
+                            address hospital overcrowding, which remains a major issue in emergency care.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">Need for Digital Integration :</span> Many hospitals still rely on
+                            manual triage processes, leading to delays in patient assessment.
+                        </li>
+                    </ul>
+                    <p class="text-gray-100 text-lg leading-relaxed">
+                        Given these limitations, new approaches - including automated triage tools, AI-assisted
+                        decision-making, and wearable health monitoring systems - are being explored to enhance
+                        emergency
+                        care.
+                    </p>
+                </section>
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">Comparing MTS
+                        with Other Triage Systems
+                    </h2>
+                    <p class="text-gray-100 text-lg leading-relaxed">
+                        To improve the effectiveness of our system, we have been researching other triage models used
+                        internationally. Two of the most prominent systems are the Emergency Severity Index (ESI) used
+                        in the United States and the Canadian Triage and Acuity Scale (CTAS) used in Canada.
+                    </p>
+                    <h3 class="text-[#00DF82] font-semibold mb-6 text-2xl border-gray-800 pb-2">Emergency Severity Index
+                        (ESI)
+                    </h3>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        The ESI is a five-level triage system similar to MTS but with a stronger focus on resource
+                        utilization. Instead of only considering the urgency of the patient’s condition, ESI also
+                        evaluates how many hospital resources will be required to treat the patient.
+                    </p>
+
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li class="text-gray-100">
+                            <span class="font-bold">ESI Level 1:</span> Immediate life-saving intervention required.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">ESI Level 2:</span> High-risk patient, needs immediate care.
+                        <li class="text-gray-100">
+                            <span class="font-bold">ESI Level 3:</span> Multiple resources required but stable
+                            condition.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">ESI Level 4:</span> One resource required.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">ESI Level 5:</span> No resources needed, minimal care required.
+                        </li>
+                    </ul>
+                    <h3 class="text-[#00DF82] font-semibold mb-6 text-2xl border-gray-800 pb-2">Canadian Triage and
+                        Acuity Scale (CTAS)
+                    </h3>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        CTAS, like MTS, uses five levels to classify patient urgency, but it incorporates more detailed
+                        clinical criteria. The system relies on symptom-based guidelines and specific patient
+                        presentations to determine priority.
+                    </p>
+                </section>
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">
+                        How This Knowledge Helps Improve Our System
+                    </h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        Studying these systems allows us to design a more robust and adaptable solution. Some key
+                        takeaways for our project include:
+                    </p>
+
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li class="text-gray-100">
+                            <span class="font-bold">Combining Clinical Urgency with Resource Consideration:</span> MTS
+                            focuses on urgency, while ESI considers both urgency and resource use. A hybrid approach
+                            could improve hospital efficiency.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">Digitalizing Triage:</span> Many hospitals still rely on manual
+                            triage processes. Integrating wearable monitoring devices could help automate data
+                            collection and speed up decision-making.
+                        </li>
+                        <li class="text-gray-100">
+                            <span class="font-bold">Improving Triage for Moderate-Risk Patients:</span> Many patients
+                            fall into yellow and green categories, leading to long wait times. An advanced triage system
+                            could provide continuous monitoring to detect deterioration in these patients.
+                        </li>
+                    </ul>
+                </section>
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">
+                        Conclusion: Towards a Smarter Triage System
+                    </h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        As we develop our healthcare technology solution, our goal is to enhance the existing triage
+                        process rather than replace it. Understanding MTS and other triage models allows us to align our
+                        system with clinical practices while introducing improvements through wearable technology,
+                        automated data processing, and real-time monitoring.
+                    </p>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        By integrating lessons from multiple triage systems, we hope to create a more efficient,
+                        accurate, and responsive emergency monitoring system. This knowledge will guide our engineering
+                        decisions, ensuring that our technology meets the real-world needs of emergency healthcare
+                        professionals.
+                    </p>
+                </section>
+                <section class="mb-8 space-y-4">
+                    <h2 class="text-gray-400 font-medium mb-4 text-xl border-b border-gray-700 pb-1">References</h2>
+                    <ul class="list-none pl-0 space-y-1 text-gray-500 text-sm">
+                        <li>
+                            Scoping Review, Q. (2023). Emergency department acuity measurement and process.
+                            <a href="https://csucloudservices-my.sharepoint.com/personal/alison_turner_mlcsu_nhs_uk/Documents/project"
+                                class="text-gray-400 hover:underline" target="_blank">NHS</a>
+                        </li>
+                        <li>
+                            Peta, D., Day, A., Lugari, W. S., Gorman, V., Ahayalimudin, N. A., & Pajo, V. M. T. (2023).
+                            Triage: A Global Perspective. Journal of Emergency Nursing, 49(6), 814–825.
+                            <a href="https://doi.org/10.1016/j.jen.2023.08.004" class="text-gray-400 hover:underline"
+                                target="_blank">DOI</a>
+                        </li>
+                    </ul>
+                </section>
+
+            </article>
+            <div class="mt-16 bg-[#151515] p-8 rounded-2xl">
+                <div class="flex items-center gap-6"><img alt="Author avatar"
+                        class="rounded-full h-20 object-cover w-20"
+                        src="https://ui-avatars.com/api/?name=Marco+Matos&background=00DF82&color=fff">
+                    <div>
+                        <h3 class="text-[#00DF82] font-semibold text-xl">Marco Matos</h3>
+                        <p class="text-gray-300 mt-2">Algorithms & Server Engineer.
+                        <div class=mt-3><a
+                                class="items-center gap-2 duration-300 hover:text-white inline-flex text-[#00DF82] transition-colors"
+                                href="https://www.linkedin.com/in/marco-matos-259b7524b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                target=_blank><svg class="h-5 w-5" fill=currentColor viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg> <span>Connect on LinkedIn</span></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-12"><button
+                    class="flex items-center gap-2 bg-[#151515] duration-300 hover:bg-[#252525] rounded-full text-white transition-all px-6 py-3"
+                    onclick=shareOnLinkedIn()><svg class="h-5 w-5" fill=currentColor viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg> Share on LinkedIn</button></div>
+        </main>
+        <footer class="w-full bg-[#030F0F] md:px-12 mt-4 px-6 py-12 text-center">
+            <p class=text-gray-400>© 2025 DEMS. All rights reserved.
+        </footer>
+        <style>
+            .prose h1,
+            .prose h2,
+            .prose h3 {
+                color: #00df82
+            }
+
+            .prose p {
+                color: #e5e7eb;
+                text-align: left;
+            }
+
+            .prose li {
+                color: #e5e7eb
+            }
+
+            .prose img {
+                border-radius: .75rem
+            }
+        </style>
+        <script>function calculateReadingTime(e) { let t = e.trim().split(/\s+/).length, n = Math.ceil(t / 160); return 1 === n ? "1 min read" : `${n} min read` } function extractTextFromHTML(e) { let t = document.createElement("div"); t.innerHTML = e; let n = t.querySelectorAll("script, style, meta, link"); return n.forEach(e => e.remove()), t.textContent || t.innerText || "" } function shareOnLinkedIn() { let e = window.location.href, t = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(e)}`; window.open(t, "_blank", "width=550,height=420") } document.addEventListener("DOMContentLoaded", () => { let e = document.querySelector("article").innerHTML, t = extractTextFromHTML(e), n = calculateReadingTime(t); document.getElementById("reading-time").textContent = n });</script>
+    </body>
+
+    </html>
