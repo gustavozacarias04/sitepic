@@ -45,50 +45,85 @@
                 </div>
             </header>
             <article class="max-w-none prose prose-invert prose-lg">
-                <p class="text-gray-100 mb-8 text-xl leading-relaxed font-light">As part of our ongoing development of
-                    the Dynamic Emergency Monitoring System (DEMS), we are now focusing on evaluating individual sensors
-                    that will eventually be integrated into our wearable prototype. One of the most critical health
-                    indicators we intend to monitor is body temperature- a vital sign that often serves as an early
-                    warning for infection, inflammation, or systemic distress. <a
-                        href="https://en.wikipedia.org/wiki/Vital_signs" class="text-[#00DF82] hover:underline"
-                        target="_blank">[Vital Signs]</a>
+                <p class="text-gray-100 mb-8 text-xl leading-relaxed font-light">As our project continues to evolve from
+                    concept to implementation, one of the most significant decisions we’ve made recently concerns the
+                    infrastructure for edge computing. After technical evaluations and a recommendation from our
+                    Scientific Advisor, Prof. Teresa Vazão, we are going to use the Raspberry Pi 4 Model B (1GB) as the
+                    local computing hub to serve as the intermediary between wearable devices and the central system.
                 </p>
-                <p class="text-gray-100 mb-8 text-xl leading-relaxed font-light">To test this, we selected the LM35DZ, a
-                    popular analog temperature sensor, for the first phase of
-                    our concept validation.</p>
 
                 <section class="mb-12 space-y-6">
-                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2"> Why the
-                        LM35DZ? </h2>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> The LM35DZ is a compact, low-cost analog
-                        temperature sensor with a linear output. It delivers 10 mV per degree Celsius, making it easy to
-                        interpret, especially when prototyping with microcontrollers such as the Arduino or Raspberry Pi
-                        (paired with an ADC module). Its main advantages are:</p>
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2"> Why Edge
+                        Computing? </h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> The Dynamic Emergency Monitoring System
+                        (DEMS) is designed to monitor patients' vital signs in real time through wearable devices. To
+                        ensure quick and efficient data handling, our architecture incorporates edge computing, where
+                        initial processing happens close to the source — in this case, on a local gateway. This layer
+                        offers critical benefits:</p>
 
                     <ul class="list-disc pl-6 space-y-2 text-gray-100">
-                        <li> Simple integration (no digital protocol needed)</li>
-                        <li> Good accuracy in the range of human body temperature</li>
-                        <li> Low power consumption </li>
-                        <li> Small form factor, suitable for wearable designs </li>
+                        <li> Real-time signal processing and anomaly detection</li>
+                        <li> Reduced bandwidth and energy consumption</li>
+                        <li> Prioritization of urgent data transmission </li>
+                        <li>Temporary data storage and buffering </li>
+                        <li>Improved resilience and offline operation if cloud connectivity is interrupted</li>
                     </ul>
                 </section>
                 <section class="mb-12 space-y-6">
-                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">
-                        The Testing Process
-                    </h2>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        For this early-stage evaluation, we connected the LM35DZ to an Arduino Uno to log real-time
-                        temperature readings. The sensor was placed in direct contact with the skin (on the wrist) and
-                        then moved to different environments (e.g., room air, hand surface, near a warm light source) to
-                        test responsiveness and accuracy, before getting the microcontroller chosen for the purpose of
-                        the project.
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2"> Why the
+                        Raspberry Pi 4 Model B? </h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> After comparing a range of microcontrollers
+                        and edge-capable devices, the Raspberry Pi 4 Model B (1GB) stood out due to the following
+                        advantages:</p>
+                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Balanced Performance for Prototyping
+                    </h3>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> With its quad-core 1.5GHz processor and 1GB
+                        of RAM, it can handle multiple data streams, apply signal processing algorithms (e.g., low-pass
+                        filters, moving average, FFT), and manage local storage simultaneously — all essential for early
+                        testing and validation.</p>
+                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Built-in Connectivity
+                    </h3>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> With Wi-Fi and Bluetooth support, the
+                        Raspberry Pi can connect directly to multiple wearable devices. This makes it well-suited for
+                        reading data in parallel from several patient wristbands and serving as a local communication
+                        hub.
                     </p>
+
+                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Local Data Storage for Synchronization
+                    </h3>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> One of the most important roles the Raspberry
+                        Pi plays in our architecture is temporarily storing processed data locally. This allows the
+                        system to:</p>
+                    <ul class="list-disc pl-6 space-y-2 text-gray-100">
+                        <li>Buffer data in case of connectivity loss with the main server</li>
+                        <li> Log information for historical review or debugging</li>
+                        <li> Package and forward summaries or time-series chunks to our app interface</li>
+                        <li> Improve responsiveness of the app by reducing the need for constant live streaming</li>
+                    </ul>
                     <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        We compared the LM35DZ readings with a standard digital thermometer as a reference. The results
-                        were surprisingly consistent at room temperature and showed reasonable precision when measuring
-                        surface body temperature, which is expected for surface-contact sensors. In the next few weeks
-                        of the prototype development, we’re aiming to ensure that the readings made have the precision
-                        needed to make part of the solution that we propose in our project.
+                        Processed data — including filtered vital signs, triage status, and alert events — is stored in
+                        structured formats (e.g., CSV file or SQL database, yet to decide) and sent to the app interface
+                        used by healthcare professionals. This enables the medical staff to access real-time patient
+                        overviews and historical data at a glance, enhancing situational awareness in emergency units.
+                    </p>
+
+                </section>
+
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2"> Integration in
+                        Our System Architecture </h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> In our system, the Raspberry Pi serves as a
+                        smart bridge between the wearables and the cloud. It:</p>
+
+                    <ul class="list-disc pl-6 space-y-2 text-gray-100">
+                        <li>Reads sensor data via Wi-Fi</li>
+                        <li>Applies preprocessing algorithms (e.g., outlier filtering, smoothing)</li>
+                        <li>Detects abnormal readings in real-time </li>
+                        <li>Stores logs for synchronization with the app interface </li>
+                        <li>Transmits relevant data to a central server or directly to the application layer</li>
+                    </ul>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> This architecture ensures low-latency local
+                        processing while maintaining access to a centralized view of patient conditions through the app.
                     </p>
                 </section>
 
@@ -97,28 +132,30 @@
                         Next Steps
                     </h2>
                     <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        While the LM35DZ showed some questionable results in our tests, we acknowledge its limitations
-                        regarding clinical accuracy and variability due to skin contact. Nevertheless, for early-stage
-                        prototyping and detecting temperature variations—particularly in yellow-priority patients—it
-                        provides a reasonably reliable foundation. In upcoming iterations, we will test alternative
-                        contact and non-contact temperature sensors to compare performance and evaluate integration
-                        feasibility with the wearable system.
+                        The adoption of the Raspberry Pi 4 Model B (1GB) as our edge computing node represents a key
+                        milestone in validating the feasibility of our solution. It enables us to bridge the gap between
+                        raw sensor data and actionable clinical information by ensuring real-time processing, efficient
+                        data transmission, and robust temporary storage. The device’s flexibility, performance, and
+                        cost-effectiveness make it ideal for our prototype phase and future scalability.
                     </p>
                     <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        This hands-on test was essential in shaping the hardware direction of our system. Each sensor we
-                        validate brings us closer to a functional prototype capable of improving emergency care through
-                        real-time monitoring and data-driven triage.
+                        With this foundation in place, we are now equipped to proceed with testing real-time monitoring
+                        scenarios, integrating with our app interface, and optimizing the flow of critical patient
+                        information. Ultimately, this choice strengthens our system’s ability to support emergency
+                        healthcare professionals in making faster, more informed decisions — improving triage accuracy
+                        and patient outcomes in high-pressure environments.
 
                     </p>
 
                     <div class="w-full h-[450px] mb-2 overflow-hidden relative rounded-2xl">
-                        <img alt="mockup" class="w-full h-full object-contain" src="assets/lm35dz.png">
+                        <img alt="mockup" class="w-full h-full object-contain" src="assets/rasp.png">
                     </div>
                     <div class="text-sm text-white text-center">
-                        Figure 1: LM35DZ temperature sensor.
+                        Figure 1: Raspberry Pi 4 Model B.
                     </div>
 
                 </section>
+
 
             </article>
             <div class="mt-16 bg-[#151515] p-8 rounded-2xl">
