@@ -59,100 +59,98 @@
                 <section class="mb-12 space-y-6">
                     <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2"> Issues with
                         the LM35DZ </h2>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> The Dynamic Emergency Monitoring System
-                        (DEMS) is designed to monitor patients' vital signs in real time through wearable devices. To
-                        ensure quick and efficient data handling, our architecture incorporates edge computing, where
-                        initial processing happens close to the source — in this case, on a local gateway. This layer
-                        offers critical benefits:</p>
-
-                    <ul class="list-disc pl-6 space-y-2 text-gray-100">
-                        <li> Real-time signal processing and anomaly detection</li>
-                        <li> Reduced bandwidth and energy consumption</li>
-                        <li> Prioritization of urgent data transmission </li>
-                        <li>Temporary data storage and buffering </li>
-                        <li>Improved resilience and offline operation if cloud connectivity is interrupted</li>
-                    </ul>
-                </section>
-                <section class="mb-12 space-y-6">
-                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2"> Why the
-                        Raspberry Pi 4 Model B? </h2>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> After comparing a range of microcontrollers
-                        and edge-capable devices, the Raspberry Pi 4 Model B (1GB) stood out due to the following
-                        advantages:</p>
-                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Balanced Performance for Prototyping
+                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Inconsistent Skin Contact
                     </h3>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> With its quad-core 1.5GHz processor and 1GB
-                        of RAM, it can handle multiple data streams, apply signal processing algorithms (e.g., low-pass
-                        filters, moving average, FFT), and manage local storage simultaneously — all essential for early
-                        testing and validation.</p>
-                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Built-in Connectivity
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> Since the LM35DZ requires physical contact
+                        with the skin, any minor movement of the wearable resulted in inconsistent pressure or
+                        placement, which significantly affected the temperature readings.</p>
+                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Surface vs. Core Temperature
                     </h3>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> With Wi-Fi and Bluetooth support, the
-                        Raspberry Pi can connect directly to multiple wearable devices. This makes it well-suited for
-                        reading data in parallel from several patient wristbands and serving as a local communication
-                        hub.
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> The sensor measures surface temperature,
+                        which is naturally lower than core body temperature and highly sensitive to ambient conditions.
+                        This made it difficult to extract meaningful health insights without applying compensation
+                        algorithms that added unnecessary complexity at this stage.
                     </p>
 
-                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Local Data Storage for Synchronization
+                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Noise and Calibration Challenges
                     </h3>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> One of the most important roles the Raspberry
-                        Pi plays in our architecture is temporarily storing processed data locally. This allows the
-                        system to:</p>
-                    <ul class="list-disc pl-6 space-y-2 text-gray-100">
-                        <li>Buffer data in case of connectivity loss with the main server</li>
-                        <li> Log information for historical review or debugging</li>
-                        <li> Package and forward summaries or time-series chunks to our app interface</li>
-                        <li> Improve responsiveness of the app by reducing the need for constant live streaming</li>
-                    </ul>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> The analog nature of the LM35DZ meant that
+                        small electrical fluctuations could introduce noise. Additional filtering and calibration steps
+                        were needed to stabilize the data.</p>
+
                     <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        Processed data — including filtered vital signs, triage status, and alert events — is stored in
-                        structured formats (e.g., CSV file or SQL database, yet to decide) and sent to the app interface
-                        used by healthcare professionals. This enables the medical staff to access real-time patient
-                        overviews and historical data at a glance, enhancing situational awareness in emergency units.
+                        We chose this sensor for its low-cost temperature measurement capabilities, but needed to ensure
+                        its performance met the requirements for our intended application. However, the tests yielded
+                        unsatisfactory results due to a lack of measurement precision, which led us to explore
+                        alternative options.
                     </p>
-
+                </section>
+                <section class="mb-12 space-y-6">
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">
+                        Integration and Next Steps
+                    </h2>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        We're currently integrating the MLX90614 into our wearable prototype, connected to the ESP32-C3
+                        via I2C for real-time processing. Initial tests show far greater consistency and usability than
+                        the LM35DZ, especially when used in mobile or semi-supervised environments like emergency units.
+                    </p>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                        Additionally, the non-contact nature of the MLX90614 opens the door for multi-patient use cases,
+                        where triage wristbands could be temporarily applied or positioned for readings without skin
+                        contact, improving hygiene and usability in high-flow emergency rooms.
+                    </p>
                 </section>
 
                 <section class="mb-12 space-y-6">
-                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2"> Integration in
-                        Our System Architecture </h2>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> In our system, the Raspberry Pi serves as a
-                        smart bridge between the wearables and the cloud. It:</p>
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">Technologies
+                        Used</h2>
+                    <div class="bg-[#051515] p-6 rounded-lg border-l-4 border-[#00DF82] my-8">
+                        <p class="text-gray-100 leading-relaxed text-lg mb-4">
+                            After reviewing alternatives — and upon further discussion between the team members and
+                            considering real-world constraints — we decided to switch to the MLX90614, a contactless
+                            infrared temperature sensor module. This sensor brings multiple advantages that align more
+                            closely with our project's goals.
+                        </p>
+                        <h3 class="text-xl text-gray-100 font-semibold mt-6"> Why MLX90614?</h3>
+                        <ul class="list-disc pl-6 space-y-2">
 
-                    <ul class="list-disc pl-6 space-y-2 text-gray-100">
-                        <li>Reads sensor data via Wi-Fi</li>
-                        <li>Applies preprocessing algorithms (e.g., outlier filtering, smoothing)</li>
-                        <li>Detects abnormal readings in real-time </li>
-                        <li>Stores logs for synchronization with the app interface </li>
-                        <li>Transmits relevant data to a central server or directly to the application layer</li>
-                    </ul>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> This architecture ensures low-latency local
-                        processing while maintaining access to a centralized view of patient conditions through the app.
-                    </p>
+                            <li class="text-gray-100">
+                                <span class="font-bold">Non-contact measurement</span> makes it more comfortable for the
+                                user.
+                            </li>
+                            <li class="text-gray-100">
+                                <span class="font-bold">Digital accuracy</span> using a built-in 17-bit ADC and I2C
+                                communication ensures clean and reliable data with less need for analog filtering.
+                            </li>
+                            <li class="text-gray-100">
+                                <span class="font-bold">More representative of core body temperature,</span>as it
+                                measures emitted infrared energy.
+                            </li>
+                            <li class="text-gray-100">
+                                <span class="font-bold">Compact and energy-efficient, </span> suitable for wearable
+                                integration.
+                            </li>
+                            <li class="text-gray-100">
+                                <span class="font-bold">Faster response time, </span> allowing near-instantaneous
+                                readings with minimal motion impact.
+                            </li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section class="mb-12 space-y-6">
                     <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">
-                        Next Steps
+                        Conclusion
                     </h2>
                     <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        The adoption of the Raspberry Pi 4 Model B (1GB) as our edge computing node represents a key
-                        milestone in validating the feasibility of our solution. It enables us to bridge the gap between
-                        raw sensor data and actionable clinical information by ensuring real-time processing, efficient
-                        data transmission, and robust temporary storage. The device’s flexibility, performance, and
-                        cost-effectiveness make it ideal for our prototype phase and future scalability.
-                    </p>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        With this foundation in place, we are now equipped to proceed with testing real-time monitoring
-                        scenarios, integrating with our app interface, and optimizing the flow of critical patient
-                        information. Ultimately, this choice strengthens our system’s ability to support emergency
-                        healthcare professionals in making faster, more informed decisions — improving triage accuracy
-                        and patient outcomes in high-pressure environments.
-
+                        The decision to shift from the LM35DZ to the MLX90614 wasn't just a technical upgrade — it was a
+                        practical, medical, and user-focused improvement. This transition reflects our core project
+                        philosophy: combining smart engineering with healthcare usability to create a system that
+                        genuinely improves emergency care workflows.
                     </p>
 
                     <div class="w-full h-[450px] mb-2 overflow-hidden relative rounded-2xl">
-                        <img alt="mockup" class="w-full h-full object-contain" src="assets/rasp.png">
+                        <img alt="mockup" class="w-full h-full object-contain" src="assets/sensortemp.png">
                     </div>
                     <div class="text-sm text-white text-center">
                         Figure 1: Raspberry Pi 4 Model B.
