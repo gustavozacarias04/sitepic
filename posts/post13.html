@@ -41,7 +41,7 @@
                 <h1 class="mb-8 font-bold md:text-5xl text-4xl">Rethinking Temperature Measurement: From LM35DZ to
                     MLX90614</h1>
                 <div class="w-full h-[400px] mb-8 overflow-hidden relative rounded-2xl"><img alt="capa post 9"
-                        class="w-full h-[450px] object-cover" src=assets/capapost12.png />
+                        class="w-full h-[450px] object-cover" src=assets/post13.png />
                 </div>
             </header>
             <article class="max-w-none prose prose-invert prose-lg">
@@ -76,9 +76,12 @@
                     <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">The Challenge:
                         Maximizing Compactness</h2>
                     <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        One of the most significant challenges during the assembly was minimizing the overall size of the circuit. Since our device is intended to be worn on a patient’s wrist or forearm, every millimeter counts. A bulky device would reduce comfort, hinder usability, and likely interfere with emergency procedures.
+                        One of the most significant challenges during the assembly was minimizing the overall size of
+                        the circuit. Since our device is intended to be worn on a patient’s wrist or forearm, every
+                        millimeter counts. A bulky device would reduce comfort, hinder usability, and likely interfere
+                        with emergency procedures.
                     </p>
-                     <h3 class="text-xl text-gray-100 font-semibold mt-6"> Strategies We Used:
+                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Strategies We Used:
                     </h3>
                     <ul class="list-disc pl-6 space-y-2">
                         <li class="text-gray-100">
@@ -88,113 +91,52 @@
                             Shortening Wires and Connectors to reduce clutter and improve signal reliability.
                         </li>
                         <li class="text-gray-100">
-                            Strategic Layout on the board to group related modules (e.g., sensors close to the micro-controller, power management isolated from signal lines).
+                            Strategic Layout on the board to group related modules (e.g., sensors close to the
+                            micro-controller, power management isolated from signal lines).
                         </li>
-                        
+
                     </ul>
                 </section>
                 <section class="mb-12 space-y-6">
-                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2"> Issues with
-                        the LM35DZ </h2>
-                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Inconsistent Skin Contact
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2"> Lessons
+                        Learned</h2>
+                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Planning is everything
                     </h3>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> Since the LM35DZ requires physical contact
-                        with the skin, any minor movement of the wearable resulted in inconsistent pressure or
-                        placement, which significantly affected the temperature readings.</p>
-                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Surface vs. Core Temperature
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> Having a clean schematic before soldering
+                        saved us a lot of time during assembly.</p>
+                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Compactness introduces complexity
                     </h3>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> The sensor measures surface temperature,
-                        which is naturally lower than core body temperature and highly sensitive to ambient conditions.
-                        This made it difficult to extract meaningful health insights without applying compensation
-                        algorithms that added unnecessary complexity at this stage.
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4">While a smaller footprint is ideal, it also
+                        means tighter spaces for the soldering iron and higher risk of shorts — especially when multiple
+                        I2C devices share lines.
                     </p>
-
-                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Noise and Calibration Challenges
+                    <h3 class="text-xl text-gray-100 font-semibold mt-6"> Modularity helps
                     </h3>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> The analog nature of the LM35DZ meant that
-                        small electrical fluctuations could introduce noise. Additional filtering and calibration steps
-                        were needed to stabilize the data.</p>
-
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        We chose this sensor for its low-cost temperature measurement capabilities, but needed to ensure
-                        its performance met the requirements for our intended application. However, the tests yielded
-                        unsatisfactory results due to a lack of measurement precision, which led us to explore
-                        alternative options.
-                    </p>
-                </section>
-                <section class="mb-12 space-y-6">
-                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">
-                        Integration and Next Steps
-                    </h2>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        We're currently integrating the MLX90614 into our wearable prototype, connected to the ESP32-C3
-                        via I2C for real-time processing. Initial tests show far greater consistency and usability than
-                        the LM35DZ, especially when used in mobile or semi-supervised environments like emergency units.
-                    </p>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        Additionally, the non-contact nature of the MLX90614 opens the door for multi-patient use cases,
-                        where triage wristbands could be temporarily applied or positioned for readings without skin
-                        contact, improving hygiene and usability in high-flow emergency rooms.
-                    </p>
+                    <p class="text-gray-100 leading-relaxed text-lg mb-4"> Keeping some parts modular allows flexibility
+                        during testing and upgrades.</p>
                 </section>
 
                 <section class="mb-12 space-y-6">
-                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">Technologies
-                        Used</h2>
+                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">Next Steps</h2>
                     <div class="bg-[#051515] p-6 rounded-lg border-l-4 border-[#00DF82] my-8">
-                        <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                            After reviewing alternatives — and upon further discussion between the team members and
-                            considering real-world constraints — we decided to switch to the MLX90614, a contactless
-                            infrared temperature sensor module. This sensor brings multiple advantages that align more
-                            closely with our project's goals.
-                        </p>
-                        <h3 class="text-xl text-gray-100 font-semibold mt-6"> Why MLX90614?</h3>
+
                         <ul class="list-disc pl-6 space-y-2">
 
                             <li class="text-gray-100">
-                                <span class="font-bold">Non-contact measurement</span> makes it more comfortable for the
-                                user.
+                                <span class="font-bold">Testing signal quality and sensor readings under harder
+                                    conditions.
                             </li>
                             <li class="text-gray-100">
-                                <span class="font-bold">Digital accuracy</span> using a built-in 17-bit ADC and I2C
-                                communication ensures clean and reliable data with less need for analog filtering.
+                                <span class="font-bold">Checking for overheating and power stability.
                             </li>
                             <li class="text-gray-100">
-                                <span class="font-bold">More representative of core body temperature,</span>as it
-                                measures emitted infrared energy.
+                                <span class="font-bold">Refining the design for the next version — to fix some of the
+                                    problems that we faced during the tests.
                             </li>
-                            <li class="text-gray-100">
-                                <span class="font-bold">Compact and energy-efficient, </span> suitable for wearable
-                                integration.
-                            </li>
-                            <li class="text-gray-100">
-                                <span class="font-bold">Faster response time, </span> allowing near-instantaneous
-                                readings with minimal motion impact.
-                            </li>
+
                         </ul>
                     </div>
                 </section>
-
-                <section class="mb-12 space-y-6">
-                    <h2 class="text-[#00DF82] font-semibold mb-6 text-3xl border-b border-gray-800 pb-2">
-                        Conclusion
-                    </h2>
-                    <p class="text-gray-100 leading-relaxed text-lg mb-4">
-                        The decision to shift from the LM35DZ to the MLX90614 wasn't just a technical upgrade — it was a
-                        practical, medical, and user-focused improvement. This transition reflects our core project
-                        philosophy: combining smart engineering with healthcare usability to create a system that
-                        genuinely improves emergency care workflows.
-                    </p>
-
-                    <div class="w-full h-[450px] mb-2 overflow-hidden relative rounded-2xl">
-                        <img alt="mockup" class="w-full h-full object-contain" src="assets/sensortemp.png">
-                    </div>
-                    <div class="text-sm text-white text-center">
-                        Figure 1: MLX90614.
-                    </div>
-
-                </section>
-
 
             </article>
             <div class="mt-16 bg-[#151515] p-8 rounded-2xl">
